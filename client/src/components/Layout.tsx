@@ -10,9 +10,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const navItems = [
     { label: "Beranda", href: "/" },
-    { label: "Produk", href: "/products" },
-    { label: "Tentang Kami", href: "/about" },
-    { label: "Kontak", href: "/contact" },
+    { label: "Galeri", href: "/gallery" },
+    { label: "Kontak & Lokasi", href: "/contact" },
   ];
 
   return (
@@ -21,26 +20,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <Link href="/">
-            <a className="flex items-center gap-2 font-bold text-xl text-primary">
+            <div className="flex items-center gap-2 font-bold text-xl text-primary cursor-pointer">
               <Printer className="h-6 w-6" />
               <span>Surya Grafika</span>
-            </a>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>
-                <a
+                <div
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-primary",
+                    "text-sm font-medium transition-colors hover:text-primary cursor-pointer",
                     location === item.href
                       ? "text-primary"
                       : "text-muted-foreground"
                   )}
                 >
                   {item.label}
-                </a>
+                </div>
               </Link>
             ))}
             <Button asChild size="sm">
@@ -63,9 +62,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <Link key={item.href} href={item.href}>
-                  <a
+                  <div
                     className={cn(
-                      "text-sm font-medium transition-colors hover:text-primary block py-2",
+                      "text-sm font-medium transition-colors hover:text-primary block py-2 cursor-pointer",
                       location === item.href
                         ? "text-primary"
                         : "text-muted-foreground"
@@ -73,7 +72,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
-                  </a>
+                  </div>
                 </Link>
               ))}
               <Button asChild className="w-full">
@@ -104,20 +103,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h3 className="font-semibold mb-4">Menu</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="/"><a className="hover:text-primary">Beranda</a></Link></li>
-                <li><Link href="/products"><a className="hover:text-primary">Produk</a></Link></li>
-                <li><Link href="/about"><a className="hover:text-primary">Tentang Kami</a></Link></li>
-                <li><Link href="/contact"><a className="hover:text-primary">Kontak</a></Link></li>
+                <li><Link href="/"><span className="hover:text-primary cursor-pointer">Beranda</span></Link></li>
+                <li><Link href="/gallery"><span className="hover:text-primary cursor-pointer">Galeri</span></Link></li>
+                <li><Link href="/contact"><span className="hover:text-primary cursor-pointer">Kontak & Lokasi</span></Link></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">Produk Populer</h3>
+              <h3 className="font-semibold mb-4">Layanan</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="/products?category=undangan-pernikahan"><a className="hover:text-primary">Undangan Pernikahan</a></Link></li>
-                <li><Link href="/products?category=kartu-nama"><a className="hover:text-primary">Kartu Nama</a></Link></li>
-                <li><Link href="/products?category=brosur-flyer"><a className="hover:text-primary">Brosur & Flyer</a></Link></li>
-                <li><Link href="/products?category=spanduk-banner"><a className="hover:text-primary">Spanduk & Banner</a></Link></li>
+                <li>Undangan Pernikahan</li>
+                <li>Kartu Nama</li>
+                <li>Brosur & Flyer</li>
+                <li>Spanduk & Banner</li>
               </ul>
             </div>
 
@@ -126,7 +124,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                  <span>Jl. Contoh No. 123, Jakarta Selatan, DKI Jakarta</span>
+                  <span>4QGJ+26 Cisarua, Kabupaten Sukabumi, Jawa Barat</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Phone className="h-4 w-4 shrink-0" />
