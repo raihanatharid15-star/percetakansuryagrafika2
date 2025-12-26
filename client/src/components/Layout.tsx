@@ -11,7 +11,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const navItems = [
     { label: "Beranda", href: "/" },
     { label: "Galeri", href: "/gallery" },
-    { label: "Kontak & Lokasi", href: "/contact" },
+    { label: "Kontak", href: "/contact" },
+    { label: "Lokasi", href: "/location" },
   ];
 
   return (
@@ -105,7 +106,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><Link href="/"><span className="hover:text-primary cursor-pointer">Beranda</span></Link></li>
                 <li><Link href="/gallery"><span className="hover:text-primary cursor-pointer">Galeri</span></Link></li>
-                <li><Link href="/contact"><span className="hover:text-primary cursor-pointer">Kontak & Lokasi</span></Link></li>
+                <li><Link href="/contact"><span className="hover:text-primary cursor-pointer">Kontak</span></Link></li>
+                <li><Link href="/location"><span className="hover:text-primary cursor-pointer">Lokasi</span></Link></li>
               </ul>
             </div>
 
@@ -128,7 +130,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </li>
                 <li className="flex items-center gap-2">
                   <Phone className="h-4 w-4 shrink-0" />
-                  <span>+62 812-3456-7890</span>
+                  <span>+62 858-6076-5740</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Mail className="h-4 w-4 shrink-0" />

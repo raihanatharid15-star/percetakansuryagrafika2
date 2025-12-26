@@ -8,6 +8,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import Location from "./pages/Location";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/gallery" component={Gallery} />
         <Route path="/contact" component={Contact} />
+        <Route path="/location" component={Location} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

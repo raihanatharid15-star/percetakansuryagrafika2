@@ -1,7 +1,9 @@
-- [ ] Fix `<a>` nesting error in Layout.tsx and Home.tsx
-- [ ] Remove Products page and related routes
-- [ ] Remove About page and related routes
-- [ ] Update Contact page with new address (Cisarua, Sukabumi)
-- [ ] Create Gallery page
-- [ ] Update Navigation menu in Layout.tsx
-- [ ] Verify all links work correctly
+- [ ] Create separate Location page
+- [ ] Update Contact page (remove map, update phone number)
+- [ ] Update Navigation in Layout.tsx (Home, Gallery, Contact, Location)
+- [ ] Redesign Home page:
+    - [ ] Remove stock photo background in Hero
+    - [ ] Use graphic/pattern theme (CMYK colors or clean geometric)
+    - [ ] Fix spacing/padding issues (add more whitespace)
+- [ ] Update Gallery page to match new theme
+- [ ] Verify all links and responsiveness
