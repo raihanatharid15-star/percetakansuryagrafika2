@@ -1,9 +1,4 @@
-- [ ] Create separate Location page
-- [ ] Update Contact page (remove map, update phone number)
-- [ ] Update Navigation in Layout.tsx (Home, Gallery, Contact, Location)
-- [ ] Redesign Home page:
-    - [ ] Remove stock photo background in Hero
-    - [ ] Use graphic/pattern theme (CMYK colors or clean geometric)
-    - [ ] Fix spacing/padding issues (add more whitespace)
-- [ ] Update Gallery page to match new theme
-- [ ] Verify all links and responsiveness
+- [ ] Configure git user and email
+- [ ] Add all changes to git
+- [ ] Commit changes with descriptive message
+- [ ] Push to GitHub remote
