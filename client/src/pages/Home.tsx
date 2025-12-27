@@ -212,67 +212,27 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-purple-500/20 rounded-3xl blur-3xl -z-10" />
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4 mt-8">
-                  <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
-                    <GlowingEffect
-                      spread={40}
-                      glow={true}
-                      disabled={false}
-                      proximity={64}
-                      inactiveZone={0.01}
-                      borderWidth={3}
-                    />
-                    <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
-                      <Wallet className="w-10 h-10 text-green-500 mb-4" />
-                      <h4 className="font-bold text-lg">{t('home.why_price')}</h4>
-                      <p className="text-sm text-muted-foreground">{t('home.why_price_desc')}</p>
-                    </div>
+                  <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
+                    <Wallet className="w-10 h-10 text-green-500 mb-4" />
+                    <h4 className="font-bold text-lg">{t('home.why_price')}</h4>
+                    <p className="text-sm text-muted-foreground">{t('home.why_price_desc')}</p>
                   </div>
-                  <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
-                    <GlowingEffect
-                      spread={40}
-                      glow={true}
-                      disabled={false}
-                      proximity={64}
-                      inactiveZone={0.01}
-                      borderWidth={3}
-                    />
-                    <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
-                      <MessageCircle className="w-10 h-10 text-blue-500 mb-4" />
-                      <h4 className="font-bold text-lg">{t('home.why_communicative')}</h4>
-                      <p className="text-sm text-muted-foreground">{t('home.why_communicative_desc')}</p>
-                    </div>
+                  <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
+                    <MessageCircle className="w-10 h-10 text-blue-500 mb-4" />
+                    <h4 className="font-bold text-lg">{t('home.why_communicative')}</h4>
+                    <p className="text-sm text-muted-foreground">{t('home.why_communicative_desc')}</p>
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
-                    <GlowingEffect
-                      spread={40}
-                      glow={true}
-                      disabled={false}
-                      proximity={64}
-                      inactiveZone={0.01}
-                      borderWidth={3}
-                    />
-                    <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
-                      <Zap className="w-10 h-10 text-orange-500 mb-4" />
-                      <h4 className="font-bold text-lg">{t('home.why_urgent')}</h4>
-                      <p className="text-sm text-muted-foreground">{t('home.why_urgent_desc')}</p>
-                    </div>
+                  <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
+                    <Zap className="w-10 h-10 text-orange-500 mb-4" />
+                    <h4 className="font-bold text-lg">{t('home.why_urgent')}</h4>
+                    <p className="text-sm text-muted-foreground">{t('home.why_urgent_desc')}</p>
                   </div>
-                  <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
-                    <GlowingEffect
-                      spread={40}
-                      glow={true}
-                      disabled={false}
-                      proximity={64}
-                      inactiveZone={0.01}
-                      borderWidth={3}
-                    />
-                    <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
-                      <Clock className="w-10 h-10 text-purple-500 mb-4" />
-                      <h4 className="font-bold text-lg">{t('home.why_speed')}</h4>
-                      <p className="text-sm text-muted-foreground">{t('home.why_speed_desc')}</p>
-                    </div>
+                  <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
+                    <Clock className="w-10 h-10 text-purple-500 mb-4" />
+                    <h4 className="font-bold text-lg">{t('home.why_speed')}</h4>
+                    <p className="text-sm text-muted-foreground">{t('home.why_speed_desc')}</p>
                   </div>
                 </div>
               </div>
