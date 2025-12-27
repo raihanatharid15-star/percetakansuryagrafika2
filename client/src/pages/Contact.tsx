@@ -68,7 +68,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">{t('contact.email_label')}</h3>
-                <p className="text-muted-foreground">info@suryagrafika.com</p>
+                <p className="text-muted-foreground">Suryagrafikagroup@gmail.com</p>
               </div>
             </div>
 
