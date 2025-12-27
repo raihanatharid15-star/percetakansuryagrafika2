@@ -1,7 +1,1 @@
-- [ ] Read pasted_content_2.txt (Button template)
-- [ ] Read pasted_content_3.txt (Theme/Language toggle template)
-- [ ] Implement new Button component
-- [ ] Implement Theme/Language toggle component
-- [ ] Implement i18n context/hook
-- [ ] Update all pages to use i18n
-- [ ] Push changes to GitHub
+- [ ] Push design enhancements (Aurora background, animations) to GitHub

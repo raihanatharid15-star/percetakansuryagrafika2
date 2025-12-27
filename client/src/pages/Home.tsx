@@ -1,167 +1,179 @@
-import { Link } from "wouter";
-import { Printer, Award, Clock, DollarSign, ArrowRight } from "lucide-react";
 import { FlowButton } from "@/components/ui/flow-button";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle2, Layers, Palette, Printer, Zap } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Home() {
   const { t } = useLanguage();
 
   const services = [
     {
+      icon: Palette,
       title: t('home.service_invitation'),
-      description: t('home.service_invitation_desc'),
-      icon: <Printer className="h-8 w-8 text-primary" />,
-      color: "bg-blue-50 dark:bg-blue-900/20"
+      desc: t('home.service_invitation_desc'),
+      color: "text-pink-500",
+      bg: "bg-pink-500/10",
     },
     {
+      icon: Layers,
       title: t('home.service_business'),
-      description: t('home.service_business_desc'),
-      icon: <Award className="h-8 w-8 text-primary" />,
-      color: "bg-purple-50 dark:bg-purple-900/20"
+      desc: t('home.service_business_desc'),
+      color: "text-blue-500",
+      bg: "bg-blue-500/10",
     },
     {
+      icon: Printer,
       title: t('home.service_banner'),
-      description: t('home.service_banner_desc'),
-      icon: <ArrowRight className="h-8 w-8 text-primary" />,
-      color: "bg-orange-50 dark:bg-orange-900/20"
+      desc: t('home.service_banner_desc'),
+      color: "text-orange-500",
+      bg: "bg-orange-500/10",
     },
     {
+      icon: Zap,
       title: t('home.service_sticker'),
-      description: t('home.service_sticker_desc'),
-      icon: <DollarSign className="h-8 w-8 text-primary" />,
-      color: "bg-green-50 dark:bg-green-900/20"
-    }
+      desc: t('home.service_sticker_desc'),
+      color: "text-purple-500",
+      bg: "bg-purple-500/10",
+    },
+  ];
+
+  const features = [
+    {
+      title: t('home.why_quality'),
+      desc: t('home.why_quality_desc'),
+    },
+    {
+      title: t('home.why_speed'),
+      desc: t('home.why_speed_desc'),
+    },
+    {
+      title: t('home.why_price'),
+      desc: t('home.why_price_desc'),
+    },
   ];
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden bg-background">
-        {/* Abstract Background Elements */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-          <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-primary/5 blur-[100px]" />
-          <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-blue-400/5 blur-[120px]" />
+      {/* Hero Section with Aurora Background */}
+      <AuroraBackground className="h-[90vh]">
+        <motion.div
+          initial={{ opacity: 0.0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="relative flex flex-col gap-8 items-center justify-center px-4 text-center max-w-4xl mx-auto"
+        >
+          <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary backdrop-blur-sm">
+            <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+            Professional Printing Service
+          </div>
           
-          {/* CMYK Decorative Dots */}
-          <div className="absolute top-20 right-20 flex gap-2 opacity-20">
-            <div className="w-4 h-4 rounded-full bg-cyan-500" />
-            <div className="w-4 h-4 rounded-full bg-magenta-500" />
-            <div className="w-4 h-4 rounded-full bg-yellow-500" />
-            <div className="w-4 h-4 rounded-full bg-black" />
+          <h1 className="text-4xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
+            {t('home.hero_title')}
+          </h1>
+          
+          <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
+            {t('home.hero_subtitle')}
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 mt-4">
+            <Link href="/contact">
+              <FlowButton text={t('home.cta_order')} />
+            </Link>
+            <Link href="/gallery">
+              <button className="px-8 py-3 rounded-full border border-border hover:bg-accent transition-colors font-medium">
+                {t('home.cta_gallery')}
+              </button>
+            </Link>
           </div>
-        </div>
-
-        <div className="container relative z-10">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-              <Printer className="w-4 h-4" />
-              <span>Digital Printing & Offset</span>
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-tight">
-              {t('home.hero_title')}
-            </h1>
-            
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {t('home.hero_subtitle')}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Link href="/contact">
-                <FlowButton text={t('home.cta_order')} />
-              </Link>
-              <Link href="/gallery">
-                <FlowButton text={t('home.cta_gallery')} className="border-muted-foreground/20 hover:border-primary/50" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+        </motion.div>
+      </AuroraBackground>
 
       {/* Services Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-4">{t('home.services_title')}</h2>
-            <p className="text-muted-foreground">
+      <section className="py-24 bg-background relative overflow-hidden">
+        <div className="container px-4 md:px-6 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{t('home.services_title')}</h2>
+            <p className="text-muted-foreground text-lg">
               {t('home.services_subtitle')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <div 
-                key={index} 
-                className={`p-8 rounded-2xl border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg ${service.color}`}
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative p-8 rounded-3xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
-                <div className="mb-6 bg-background w-16 h-16 rounded-xl flex items-center justify-center shadow-sm">
-                  {service.icon}
+                <div className={`w-14 h-14 rounded-2xl ${service.bg} ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <service.icon className="w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
+                  {service.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-background">
-        <div className="container">
+      {/* Why Us Section */}
+      <section className="py-24 bg-muted/30 border-y border-border/50">
+        <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
                 {t('home.why_us_title')}
               </h2>
-              
               <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <Award className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{t('home.why_quality')}</h3>
-                    <p className="text-muted-foreground">{t('home.why_quality_desc')}</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <Clock className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{t('home.why_speed')}</h3>
-                    <p className="text-muted-foreground">{t('home.why_speed_desc')}</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <DollarSign className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{t('home.why_price')}</h3>
-                    <p className="text-muted-foreground">{t('home.why_price_desc')}</p>
-                  </div>
-                </div>
+                {features.map((feature, index) => (
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.2 }}
+                    viewport={{ once: true }}
+                    className="flex gap-4"
+                  >
+                    <div className="mt-1">
+                      <CheckCircle2 className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-1">{feature.title}</h3>
+                      <p className="text-muted-foreground">{feature.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="pt-4">
+                <Link href="/contact">
+                  <FlowButton text={t('home.cta_order')} icon={ArrowRight} />
+                </Link>
               </div>
             </div>
             
             <div className="relative">
-              <div className="aspect-square rounded-3xl overflow-hidden bg-muted relative z-10 border border-border">
-                {/* Graphic Pattern Placeholder */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-blue-500/5 flex items-center justify-center">
-                  <div className="grid grid-cols-2 gap-4 p-8 opacity-20">
-                    <div className="w-32 h-32 rounded-full border-4 border-primary" />
-                    <div className="w-32 h-32 rounded-lg bg-primary" />
-                    <div className="w-32 h-32 rounded-lg bg-primary" />
-                    <div className="w-32 h-32 rounded-full border-4 border-primary" />
-                  </div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-purple-500/20 rounded-3xl blur-3xl -z-10" />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4 mt-8">
+                  <div className="h-48 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 w-full animate-pulse" />
+                  <div className="h-64 rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 w-full animate-pulse delay-75" />
+                </div>
+                <div className="space-y-4">
+                  <div className="h-64 rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 w-full animate-pulse delay-150" />
+                  <div className="h-48 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 w-full animate-pulse delay-300" />
                 </div>
               </div>
-              <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10" />
             </div>
           </div>
         </div>
