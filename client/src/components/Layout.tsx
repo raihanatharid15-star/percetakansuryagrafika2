@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ui/theme-toggle";
 import { LanguageToggle } from "./ui/language-toggle";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { AnimatedGradientBackground } from "./ui/animated-gradient-background";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,14 +21,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-background font-sans transition-colors duration-300">
+    <div className="min-h-screen flex flex-col font-sans transition-colors duration-300 relative">
+      <AnimatedGradientBackground />
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <Link href="/">
             <div className="flex items-center gap-2 font-bold text-xl text-primary cursor-pointer">
-              <Printer className="h-6 w-6" />
-              <span>Surya Grafika</span>
+              <img src="/logo.webp" alt="Surya Grafika Logo" className="h-10 w-auto object-contain" />
+              <span className="hidden sm:inline-block">Surya Grafika</span>
             </div>
           </Link>
 
@@ -102,7 +104,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center gap-2 font-bold text-xl text-primary">
-                <Printer className="h-6 w-6" />
+                <img src="/logo.webp" alt="Surya Grafika Logo" className="h-8 w-auto object-contain" />
                 <span>Surya Grafika</span>
               </div>
               <p className="text-sm text-muted-foreground">

@@ -1,1 +1,1 @@
-- [ ] Push design enhancements (Aurora background, animations) to GitHub
+- [ ] Push logo and background updates to GitHub
