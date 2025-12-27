@@ -1,6 +1,7 @@
 import { FlowButton } from "@/components/ui/flow-button";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, FileText, Printer, FileSpreadsheet, Flag, CreditCard, Mail, Wallet, MessageCircle, Zap, Clock } from "lucide-react";
@@ -88,14 +89,18 @@ export default function Home() {
             Professional Printing Service
           </motion.div>
           
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70"
-          >
-            {t('home.hero_title')}
-          </motion.h1>
+          <HeroHighlight containerClassName="h-auto bg-transparent">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-4xl md:text-7xl font-bold tracking-tight text-foreground max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto"
+            >
+              <Highlight className="text-black dark:text-white">
+                {t('home.hero_title')}
+              </Highlight>
+            </motion.h1>
+          </HeroHighlight>
           
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
