@@ -4,11 +4,12 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Layout from "./components/Layout";
+import { LanguageProvider } from "./contexts/LanguageContext";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Location from "./pages/Location";
+import Layout from "./components/Layout";
 
 function Router() {
   return (
@@ -27,11 +28,13 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="light">
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
+      <ThemeProvider defaultTheme="light" switchable>
+        <LanguageProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </LanguageProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );

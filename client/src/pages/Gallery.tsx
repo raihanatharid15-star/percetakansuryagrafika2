@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { Loader2, ZoomIn } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type GalleryItem = {
   id: string;
@@ -13,6 +14,7 @@ type GalleryItem = {
 export default function Gallery() {
   const [items, setItems] = useState<GalleryItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const { t } = useLanguage();
 
   useEffect(() => {
     fetchGalleryItems();
@@ -91,9 +93,9 @@ export default function Gallery() {
   return (
     <div className="container py-16 space-y-12">
       <div className="text-center max-w-2xl mx-auto space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">Galeri Hasil Cetak</h1>
+        <h1 className="text-4xl font-bold tracking-tight">{t('gallery.title')}</h1>
         <p className="text-lg text-muted-foreground">
-          Lihat koleksi portofolio hasil pengerjaan kami. Kualitas adalah prioritas utama kami.
+          {t('gallery.subtitle')}
         </p>
       </div>
 

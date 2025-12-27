@@ -1,107 +1,146 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MessageCircle, Clock } from "lucide-react";
+import { FlowButton } from "@/components/ui/flow-button";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const formSchema = z.object({
+  name: z.string().min(2, "Nama minimal 2 karakter"),
+  message: z.string().min(10, "Pesan minimal 10 karakter"),
+});
 
 export default function Contact() {
-  const phoneNumber = "6285860765740";
-  const displayPhone = "+62 858-6076-5740";
-  const email = "info@suryagrafika.com";
+  const { t } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      message: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+    
+    // Format pesan WhatsApp
+    const text = `Halo Surya Grafika, saya ${values.name}. ${values.message}`;
+    const encodedText = encodeURIComponent(text);
+    const waUrl = `https://wa.me/6285860765740?text=${encodedText}`;
+    
+    // Redirect ke WhatsApp
+    window.open(waUrl, '_blank');
+    setIsSubmitting(false);
+  }
 
   return (
-    <div className="container py-16 space-y-12">
-      <div className="text-center max-w-2xl mx-auto space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight text-slate-900">Hubungi Kami</h1>
-        <p className="text-lg text-muted-foreground">
-          Siap mendiskusikan kebutuhan cetak Anda? Hubungi kami melalui WhatsApp atau Email.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+    <div className="container py-16 md:py-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         {/* Contact Info */}
         <div className="space-y-8">
-          <div className="grid gap-6">
-            <Card className="border-none shadow-md hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 flex items-center gap-4">
-                <div className="bg-green-100 p-3 rounded-full">
-                  <MessageCircle className="h-6 w-6 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg">WhatsApp</h3>
-                  <p className="text-muted-foreground mb-2">Respon Cepat (08:00 - 17:00)</p>
-                  <Button 
-                    variant="outline" 
-                    className="text-green-600 border-green-200 hover:bg-green-50"
-                    onClick={() => window.open(`https://wa.me/${phoneNumber}`, "_blank")}
-                  >
-                    Chat Sekarang
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+          <div>
+            <h1 className="text-4xl font-bold tracking-tight mb-4">{t('contact.title')}</h1>
+            <p className="text-lg text-muted-foreground">
+              {t('contact.subtitle')}
+            </p>
+          </div>
 
-            <Card className="border-none shadow-md hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 flex items-center gap-4">
-                <div className="bg-blue-100 p-3 rounded-full">
-                  <Phone className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Telepon</h3>
-                  <p className="text-muted-foreground mb-1">{displayPhone}</p>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="space-y-6">
+            <div className="flex items-start gap-4 p-6 rounded-2xl bg-muted/30 border border-border/50">
+              <div className="p-3 rounded-xl bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
+                <Phone className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">{t('contact.wa_label')}</h3>
+                <p className="text-muted-foreground">+62 858-6076-5740</p>
+              </div>
+            </div>
 
-            <Card className="border-none shadow-md hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 flex items-center gap-4">
-                <div className="bg-orange-100 p-3 rounded-full">
-                  <Mail className="h-6 w-6 text-orange-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Email</h3>
-                  <p className="text-muted-foreground mb-1">{email}</p>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-none shadow-md hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 flex items-center gap-4">
-                <div className="bg-slate-100 p-3 rounded-full">
-                  <Clock className="h-6 w-6 text-slate-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Jam Operasional</h3>
-                  <p className="text-muted-foreground">Senin - Sabtu: 08:00 - 17:00 WIB</p>
-                  <p className="text-muted-foreground">Minggu: Libur</p>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="flex items-start gap-4 p-6 rounded-2xl bg-muted/30 border border-border/50">
+              <div className="p-3 rounded-xl bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+                <Mail className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">{t('contact.email_label')}</h3>
+                <p className="text-muted-foreground">info@suryagrafika.com</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 p-6 rounded-2xl bg-muted/30 border border-border/50">
+              <div className="p-3 rounded-xl bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400">
+                <MapPin className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">{t('contact.address_label')}</h3>
+                <p className="text-muted-foreground">
+                  {t('contact.address_value')}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 p-6 rounded-2xl bg-muted/30 border border-border/50">
+              <div className="p-3 rounded-xl bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+                <Clock className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">{t('contact.hours_label')}</h3>
+                <p className="text-muted-foreground">{t('contact.hours_value')}</p>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Contact Form */}
-        <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-          <h2 className="text-2xl font-bold mb-6">Kirim Pesan</h2>
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Nama Lengkap</label>
-              <Input placeholder="Nama Anda" className="bg-white" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Email / WhatsApp</label>
-              <Input placeholder="Kontak yang bisa dihubungi" className="bg-white" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Subjek</label>
-              <Input placeholder="Perihal pesan Anda" className="bg-white" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Pesan</label>
-              <Textarea placeholder="Tulis pesan Anda di sini..." className="min-h-[150px] bg-white" />
-            </div>
-            <Button type="submit" className="w-full h-12 text-lg">Kirim Pesan</Button>
-          </form>
+        <div className="bg-card p-8 rounded-3xl border shadow-sm">
+          <h2 className="text-2xl font-bold mb-6">{t('contact.form_title')}</h2>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('contact.name_label')}</FormLabel>
+                    <FormControl>
+                      <Input placeholder={t('contact.name_placeholder')} {...field} className="h-12 rounded-xl" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('contact.message_label')}</FormLabel>
+                    <FormControl>
+                      <Textarea 
+                        placeholder={t('contact.message_placeholder')}
+                        className="min-h-[150px] rounded-xl resize-none"
+                        {...field} 
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FlowButton 
+                type="submit" 
+                disabled={isSubmitting}
+                text={t('contact.send_wa')}
+                className="w-full justify-center"
+              />
+            </form>
+          </Form>
         </div>
       </div>
     </div>
