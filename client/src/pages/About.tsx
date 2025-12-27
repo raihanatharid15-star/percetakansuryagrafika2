@@ -38,13 +38,13 @@ export default function About() {
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
               {t('about.title')}
             </h1>
-            <p className="text-lg text-muted-foreground font-medium">
+            <p className="text-lg text-foreground/80 font-semibold">
               {t('about.subtitle')}
             </p>
           </div>
 
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
-            <p>{t('about.p1')}</p>
+          <div className="space-y-4 text-foreground/90 leading-relaxed text-base md:text-lg">
+            <p className="font-medium">{t('about.p1')}</p>
             <p>{t('about.p2')}</p>
             <p>{t('about.p3')}</p>
             <p>{t('about.p4')}</p>
