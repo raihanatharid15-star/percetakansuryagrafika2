@@ -2,7 +2,7 @@ import { FlowButton } from "@/components/ui/flow-button";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Layers, Palette, Printer, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Layers, Palette, Printer, Zap, ShieldCheck, Clock, Wallet, Award } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -95,7 +95,7 @@ export default function Home() {
       </AuroraBackground>
 
       {/* Services Section */}
-      <section className="py-24 bg-background relative overflow-hidden">
+      <section className="py-24 bg-transparent relative overflow-hidden">
         <div className="container px-4 md:px-6 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{t('home.services_title')}</h2>
@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* Why Us Section */}
-      <section className="py-24 bg-muted/30 border-y border-border/50">
+      <section className="py-24 bg-transparent border-y border-border/50">
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -166,12 +166,28 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-purple-500/20 rounded-3xl blur-3xl -z-10" />
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4 mt-8">
-                  <div className="h-48 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 w-full animate-pulse" />
-                  <div className="h-64 rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 w-full animate-pulse delay-75" />
+                  <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
+                    <ShieldCheck className="w-10 h-10 text-green-500 mb-4" />
+                    <h4 className="font-bold text-lg">Quality</h4>
+                    <p className="text-sm text-muted-foreground">Premium materials</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
+                    <Clock className="w-10 h-10 text-blue-500 mb-4" />
+                    <h4 className="font-bold text-lg">Fast</h4>
+                    <p className="text-sm text-muted-foreground">On-time delivery</p>
+                  </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="h-64 rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 w-full animate-pulse delay-150" />
-                  <div className="h-48 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 w-full animate-pulse delay-300" />
+                  <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
+                    <Wallet className="w-10 h-10 text-orange-500 mb-4" />
+                    <h4 className="font-bold text-lg">Affordable</h4>
+                    <p className="text-sm text-muted-foreground">Best value</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
+                    <Award className="w-10 h-10 text-purple-500 mb-4" />
+                    <h4 className="font-bold text-lg">Expert</h4>
+                    <p className="text-sm text-muted-foreground">Skilled team</p>
+                  </div>
                 </div>
               </div>
             </div>
