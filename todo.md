@@ -34,3 +34,8 @@
 - [ ] Update Home.tsx to use GlowingEffect for Service and Feature cards
 - [ ] Revert "Why Choose Us" section in Home.tsx to original design (remove GlowingEffect)
 - [ ] Update About.tsx text color to darker shade (e.g., text-gray-800 or text-foreground)
+- [ ] Read pasted_content_6.txt to understand text animation requirements
+- [ ] Create client/src/components/ui/text-animate.tsx
+- [ ] Update Home.tsx to use TextAnimate for Hero section text
+- [ ] Create client/src/components/ui/hero-highlight.tsx
+- [ ] Update Home.tsx to use HeroHighlight for Hero section text
