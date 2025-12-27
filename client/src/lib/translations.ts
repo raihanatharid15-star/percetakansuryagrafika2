@@ -62,7 +62,7 @@ export const translations = {
       hours_value: "Senin - Sabtu: 08.00 - 17.00",
     },
     location: {
-      title: "Lokasi Workshop",
+      title: "Lokasi",
       subtitle: "Kunjungi workshop kami untuk konsultasi langsung atau melihat sampel bahan cetakan.",
       address_title: "Alamat Lengkap",
       open_maps: "Buka di Google Maps",
@@ -147,7 +147,7 @@ export const translations = {
       hours_value: "Mon - Sat: 08.00 - 17.00",
     },
     location: {
-      title: "Workshop Location",
+      title: "Location",
       subtitle: "Visit our workshop for direct consultation or to see print material samples.",
       address_title: "Full Address",
       open_maps: "Open in Google Maps",
