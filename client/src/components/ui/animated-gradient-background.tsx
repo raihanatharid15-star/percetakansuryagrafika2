@@ -37,10 +37,10 @@ export const AnimatedGradientBackground = ({
         className
       )}
     >
-      <div className="absolute inset-0 opacity-40 dark:opacity-20">
-        <div className="absolute -top-[40%] -left-[20%] h-[80%] w-[80%] rounded-full bg-blue-500/30 blur-[120px] animate-blob mix-blend-multiply dark:mix-blend-screen filter" />
-        <div className="absolute top-[20%] -right-[20%] h-[80%] w-[80%] rounded-full bg-sky-500/30 blur-[120px] animate-blob animation-delay-2000 mix-blend-multiply dark:mix-blend-screen filter" />
-        <div className="absolute -bottom-[40%] left-[20%] h-[80%] w-[80%] rounded-full bg-indigo-500/30 blur-[120px] animate-blob animation-delay-4000 mix-blend-multiply dark:mix-blend-screen filter" />
+      <div className="absolute inset-0 opacity-80 dark:opacity-60">
+        <div className="absolute -top-[40%] -left-[20%] h-[80%] w-[80%] rounded-full bg-blue-400/50 blur-[100px] animate-blob mix-blend-multiply dark:mix-blend-screen filter" />
+        <div className="absolute top-[20%] -right-[20%] h-[80%] w-[80%] rounded-full bg-sky-400/50 blur-[100px] animate-blob animation-delay-2000 mix-blend-multiply dark:mix-blend-screen filter" />
+        <div className="absolute -bottom-[40%] left-[20%] h-[80%] w-[80%] rounded-full bg-indigo-400/50 blur-[100px] animate-blob animation-delay-4000 mix-blend-multiply dark:mix-blend-screen filter" />
       </div>
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
       {children}
