@@ -76,30 +76,41 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Aurora Background */}
       <AuroraBackground className="h-[90vh]">
-        <motion.div
-          initial={{ opacity: 0.0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="relative flex flex-col gap-8 items-center justify-center px-4 text-center max-w-4xl mx-auto"
-        >
-          <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary backdrop-blur-sm">
+        <div className="relative flex flex-col gap-8 items-center justify-center px-4 text-center max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary backdrop-blur-sm"
+          >
             <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
             Professional Printing Service
-          </div>
+          </motion.div>
           
-          <h1 className="text-4xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-4xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70"
+          >
             {t('home.hero_title')}
-          </h1>
+          </motion.h1>
           
-          <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-lg md:text-2xl text-muted-foreground max-w-2xl leading-relaxed"
+          >
             {t('home.hero_subtitle')}
-          </p>
+          </motion.p>
           
-          <div className="flex flex-col sm:flex-row gap-4 mt-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 mt-4"
+          >
             <Link href="/contact">
               <FlowButton text={t('home.cta_order')} />
             </Link>
@@ -108,8 +119,8 @@ export default function Home() {
                 {t('home.cta_gallery')}
               </button>
             </Link>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </AuroraBackground>
 
       {/* Services Section */}
