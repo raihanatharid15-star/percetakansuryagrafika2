@@ -7,6 +7,7 @@ export const translations = {
       gallery: "Galeri",
       contact: "Kontak",
       location: "Lokasi",
+      about: "Tentang Kami",
     },
     home: {
       hero_title: "Percetakan Surya Grafika",
@@ -68,6 +69,15 @@ export const translations = {
       live_status: "Buka",
       click_expand: "Klik untuk memperbesar",
     },
+    about: {
+      title: "Tentang Kami",
+      subtitle: "Mengenal lebih dekat Percetakan Surya Grafika",
+      p1: "Surya Grafika adalah usaha percetakan yang telah berdiri lebih dari 20 tahun, melayani kebutuhan cetak untuk perusahaan, pabrik, dan perkantoran dengan mengutamakan ketepatan, konsistensi, dan kepercayaan.",
+      p2: "Surya Grafika tumbuh bersama para klien yang mempercayakan kebutuhan cetaknya secara kontinyu. Hingga hari ini, kami tetap menjaga nilai utama yaitu komitmen terhadap kualitas.",
+      p3: "Kami memahami bahwa bagi bisnis, hasil cetak bukan sekadar kertas melainkan bagian dari operasional, administrasi, dan profesionalitas perusahaan. Karena itu, kami berusaha menjadi partner percetakan yang memudahkan komunikasi, transparan dalam proses, dan siap menyesuaikan kebutuhan klien.",
+      p4: "Dengan pengalaman panjang, sistem kerja yang terbukti, serta pendekatan yang personal, Surya Grafika hadir untuk memberikan solusi cetak yang aman, efisien, dan dapat diandalkan.",
+      p5: "Bagi kami, kepercayaan klien adalah aset utama yang terus kami jaga, hari ini dan ke depannya.",
+    },
     footer: {
       about: "Tentang Kami",
       about_desc: "Percetakan Surya Grafika adalah mitra terpercaya untuk segala kebutuhan cetak Anda di Sukabumi.",
@@ -82,6 +92,7 @@ export const translations = {
       gallery: "Gallery",
       contact: "Contact",
       location: "Location",
+      about: "About Us",
     },
     home: {
       hero_title: "Surya Grafika Printing",
@@ -142,6 +153,15 @@ export const translations = {
       open_maps: "Open in Google Maps",
       live_status: "Open",
       click_expand: "Click to expand",
+    },
+    about: {
+      title: "About Us",
+      subtitle: "Get to know Surya Grafika Printing better",
+      p1: "Surya Grafika is a printing business that has been established for more than 20 years, serving printing needs for companies, factories, and offices by prioritizing accuracy, consistency, and trust.",
+      p2: "Surya Grafika grows together with clients who entrust their printing needs continuously. Until today, we maintain our main value which is commitment to quality.",
+      p3: "We understand that for businesses, print results are not just paper but part of operations, administration, and company professionalism. Therefore, we strive to be a printing partner that facilitates communication, is transparent in the process, and ready to adapt to client needs.",
+      p4: "With long experience, proven work systems, and a personal approach, Surya Grafika is here to provide safe, efficient, and reliable printing solutions.",
+      p5: "For us, client trust is the main asset that we continue to maintain, today and in the future.",
     },
     footer: {
       about: "About Us",
