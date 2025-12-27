@@ -2,7 +2,7 @@ import { FlowButton } from "@/components/ui/flow-button";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Layers, Palette, Printer, Zap, ShieldCheck, Clock, Wallet, Award } from "lucide-react";
+import { ArrowRight, CheckCircle2, FileText, Printer, FileSpreadsheet, Flag, CreditCard, Mail, Wallet, MessageCircle, Zap, Clock } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -10,47 +10,65 @@ export default function Home() {
 
   const services = [
     {
-      icon: Palette,
-      title: t('home.service_invitation'),
-      desc: t('home.service_invitation_desc'),
-      color: "text-pink-500",
-      bg: "bg-pink-500/10",
-    },
-    {
-      icon: Layers,
-      title: t('home.service_business'),
-      desc: t('home.service_business_desc'),
+      icon: FileText,
+      title: t('home.service_form'),
+      desc: t('home.service_form_desc'),
       color: "text-blue-500",
       bg: "bg-blue-500/10",
     },
     {
       icon: Printer,
+      title: t('home.service_a3'),
+      desc: t('home.service_a3_desc'),
+      color: "text-purple-500",
+      bg: "bg-purple-500/10",
+    },
+    {
+      icon: FileSpreadsheet,
+      title: t('home.service_nota'),
+      desc: t('home.service_nota_desc'),
+      color: "text-green-500",
+      bg: "bg-green-500/10",
+    },
+    {
+      icon: Flag,
       title: t('home.service_banner'),
       desc: t('home.service_banner_desc'),
       color: "text-orange-500",
       bg: "bg-orange-500/10",
     },
     {
-      icon: Zap,
-      title: t('home.service_sticker'),
-      desc: t('home.service_sticker_desc'),
-      color: "text-purple-500",
-      bg: "bg-purple-500/10",
+      icon: CreditCard,
+      title: t('home.service_card'),
+      desc: t('home.service_card_desc'),
+      color: "text-indigo-500",
+      bg: "bg-indigo-500/10",
+    },
+    {
+      icon: Mail,
+      title: t('home.service_invitation'),
+      desc: t('home.service_invitation_desc'),
+      color: "text-pink-500",
+      bg: "bg-pink-500/10",
     },
   ];
 
   const features = [
     {
-      title: t('home.why_quality'),
-      desc: t('home.why_quality_desc'),
+      title: t('home.why_price'),
+      desc: t('home.why_price_desc'),
+    },
+    {
+      title: t('home.why_communicative'),
+      desc: t('home.why_communicative_desc'),
+    },
+    {
+      title: t('home.why_urgent'),
+      desc: t('home.why_urgent_desc'),
     },
     {
       title: t('home.why_speed'),
       desc: t('home.why_speed_desc'),
-    },
-    {
-      title: t('home.why_price'),
-      desc: t('home.why_price_desc'),
     },
   ];
 
@@ -104,7 +122,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -167,26 +185,26 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4 mt-8">
                   <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
-                    <ShieldCheck className="w-10 h-10 text-green-500 mb-4" />
-                    <h4 className="font-bold text-lg">Quality</h4>
-                    <p className="text-sm text-muted-foreground">Premium materials</p>
+                    <Wallet className="w-10 h-10 text-green-500 mb-4" />
+                    <h4 className="font-bold text-lg">{t('home.why_price')}</h4>
+                    <p className="text-sm text-muted-foreground">{t('home.why_price_desc')}</p>
                   </div>
                   <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
-                    <Clock className="w-10 h-10 text-blue-500 mb-4" />
-                    <h4 className="font-bold text-lg">Fast</h4>
-                    <p className="text-sm text-muted-foreground">On-time delivery</p>
+                    <MessageCircle className="w-10 h-10 text-blue-500 mb-4" />
+                    <h4 className="font-bold text-lg">{t('home.why_communicative')}</h4>
+                    <p className="text-sm text-muted-foreground">{t('home.why_communicative_desc')}</p>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
-                    <Wallet className="w-10 h-10 text-orange-500 mb-4" />
-                    <h4 className="font-bold text-lg">Affordable</h4>
-                    <p className="text-sm text-muted-foreground">Best value</p>
+                    <Zap className="w-10 h-10 text-orange-500 mb-4" />
+                    <h4 className="font-bold text-lg">{t('home.why_urgent')}</h4>
+                    <p className="text-sm text-muted-foreground">{t('home.why_urgent_desc')}</p>
                   </div>
                   <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
-                    <Award className="w-10 h-10 text-purple-500 mb-4" />
-                    <h4 className="font-bold text-lg">Expert</h4>
-                    <p className="text-sm text-muted-foreground">Skilled team</p>
+                    <Clock className="w-10 h-10 text-purple-500 mb-4" />
+                    <h4 className="font-bold text-lg">{t('home.why_speed')}</h4>
+                    <p className="text-sm text-muted-foreground">{t('home.why_speed_desc')}</p>
                   </div>
                 </div>
               </div>
