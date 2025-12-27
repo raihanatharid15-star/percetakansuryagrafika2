@@ -28,7 +28,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container flex h-16 items-center justify-between">
           <Link href="/">
             <div className="flex items-center gap-2 font-bold text-xl text-primary cursor-pointer">
-              <img src="/logo.webp" alt="Surya Grafika Logo" className="h-10 w-auto object-contain" />
+              <img src="/logo.webp" alt="Surya Grafika Logo" className="h-8 w-auto object-contain" />
               <span className="hidden sm:inline-block">Surya Grafika</span>
             </div>
           </Link>

@@ -1,1 +1,2 @@
 - [ ] Push logo and background updates to GitHub
+- [ ] Align logo with text in navbar (Layout.tsx)
