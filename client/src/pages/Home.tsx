@@ -1,5 +1,6 @@
 import { FlowButton } from "@/components/ui/flow-button";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, FileText, Printer, FileSpreadsheet, Flag, CreditCard, Mail, Wallet, MessageCircle, Zap, Clock } from "lucide-react";
@@ -141,15 +142,31 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative p-8 rounded-3xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3"
               >
-                <div className={`w-14 h-14 rounded-2xl ${service.bg} ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-7 h-7" />
+                <GlowingEffect
+                  spread={40}
+                  glow={true}
+                  disabled={false}
+                  proximity={64}
+                  inactiveZone={0.01}
+                  borderWidth={3}
+                />
+                <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
+                  <div className="relative flex flex-1 flex-col justify-between gap-3">
+                    <div className={`w-14 h-14 rounded-2xl ${service.bg} ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <service.icon className="w-7 h-7" />
+                    </div>
+                    <div className="space-y-3">
+                      <h3 className="pt-0.5 text-xl leading-[1.375rem] font-semibold font-sans tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-balance text-foreground">
+                        {service.title}
+                      </h3>
+                      <p className="font-sans text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] text-muted-foreground">
+                        {service.desc}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.desc}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -195,27 +212,67 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-purple-500/20 rounded-3xl blur-3xl -z-10" />
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4 mt-8">
-                  <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
-                    <Wallet className="w-10 h-10 text-green-500 mb-4" />
-                    <h4 className="font-bold text-lg">{t('home.why_price')}</h4>
-                    <p className="text-sm text-muted-foreground">{t('home.why_price_desc')}</p>
+                  <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
+                    <GlowingEffect
+                      spread={40}
+                      glow={true}
+                      disabled={false}
+                      proximity={64}
+                      inactiveZone={0.01}
+                      borderWidth={3}
+                    />
+                    <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
+                      <Wallet className="w-10 h-10 text-green-500 mb-4" />
+                      <h4 className="font-bold text-lg">{t('home.why_price')}</h4>
+                      <p className="text-sm text-muted-foreground">{t('home.why_price_desc')}</p>
+                    </div>
                   </div>
-                  <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
-                    <MessageCircle className="w-10 h-10 text-blue-500 mb-4" />
-                    <h4 className="font-bold text-lg">{t('home.why_communicative')}</h4>
-                    <p className="text-sm text-muted-foreground">{t('home.why_communicative_desc')}</p>
+                  <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
+                    <GlowingEffect
+                      spread={40}
+                      glow={true}
+                      disabled={false}
+                      proximity={64}
+                      inactiveZone={0.01}
+                      borderWidth={3}
+                    />
+                    <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
+                      <MessageCircle className="w-10 h-10 text-blue-500 mb-4" />
+                      <h4 className="font-bold text-lg">{t('home.why_communicative')}</h4>
+                      <p className="text-sm text-muted-foreground">{t('home.why_communicative_desc')}</p>
+                    </div>
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
-                    <Zap className="w-10 h-10 text-orange-500 mb-4" />
-                    <h4 className="font-bold text-lg">{t('home.why_urgent')}</h4>
-                    <p className="text-sm text-muted-foreground">{t('home.why_urgent_desc')}</p>
+                  <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
+                    <GlowingEffect
+                      spread={40}
+                      glow={true}
+                      disabled={false}
+                      proximity={64}
+                      inactiveZone={0.01}
+                      borderWidth={3}
+                    />
+                    <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
+                      <Zap className="w-10 h-10 text-orange-500 mb-4" />
+                      <h4 className="font-bold text-lg">{t('home.why_urgent')}</h4>
+                      <p className="text-sm text-muted-foreground">{t('home.why_urgent_desc')}</p>
+                    </div>
                   </div>
-                  <div className="p-6 rounded-2xl bg-card border border-border/50 shadow-sm">
-                    <Clock className="w-10 h-10 text-purple-500 mb-4" />
-                    <h4 className="font-bold text-lg">{t('home.why_speed')}</h4>
-                    <p className="text-sm text-muted-foreground">{t('home.why_speed_desc')}</p>
+                  <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
+                    <GlowingEffect
+                      spread={40}
+                      glow={true}
+                      disabled={false}
+                      proximity={64}
+                      inactiveZone={0.01}
+                      borderWidth={3}
+                    />
+                    <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
+                      <Clock className="w-10 h-10 text-purple-500 mb-4" />
+                      <h4 className="font-bold text-lg">{t('home.why_speed')}</h4>
+                      <p className="text-sm text-muted-foreground">{t('home.why_speed_desc')}</p>
+                    </div>
                   </div>
                 </div>
               </div>
