@@ -1,5 +1,6 @@
 import { LocationMap } from "@/components/ui/expand-map";
 import { FlowButton } from "@/components/ui/flow-button";
+import { AnimatedGradientBackground } from "@/components/ui/animated-gradient-background";
 import { MapPin, Navigation } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -8,27 +9,30 @@ export default function Location() {
   const googleMapsUrl = "https://maps.app.goo.gl/mZcz9x528rus7m5z8";
 
   return (
-    <div className="flex flex-col min-h-[calc(100vh-4rem)]">
+    <div className="flex flex-col min-h-[calc(100vh-4rem)] relative">
+      {/* Animated Background */}
+      <AnimatedGradientBackground />
+      
       {/* Header Section */}
-      <section className="bg-slate-950 py-16 px-4 md:px-6 text-center relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      <section className="py-16 px-4 md:px-6 text-center relative overflow-hidden">
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-purple-500/10"></div>
         
         <div className="container mx-auto max-w-3xl space-y-4 relative z-10">
           <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4 backdrop-blur-sm border border-white/10">
             <MapPin className="h-8 w-8 text-primary" />
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
             {t('location.title')}
           </h1>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
             {t('location.subtitle')}
           </p>
         </div>
       </section>
 
       {/* Map & Address Section */}
-      <section className="flex-1 py-16 bg-background">
+      <section className="flex-1 py-16 relative">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center gap-12">
             
