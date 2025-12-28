@@ -190,11 +190,11 @@ export default function Home() {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
             {[
-              { name: 'PT Doosan Jaya Sukabumi', logo: '/partner-doosan-jaya-sukabumi.jpg' },
-              { name: 'PT Young Hyun Star', logo: '/partner-young-hyun-star.jpg' },
-              { name: 'PT Busana Indah Global', logo: '/partner-busana-indah-global.jpg' },
-              { name: 'PT Sengsil Indonesia', logo: '/partner-sengsil-indonesia.jpg' },
-              { name: 'PT Doosan Dunia Busana', logo: '/partner-doosan-dunia-busana.jpg' },
+              { name: 'PT Doosan Jaya Sukabumi', logo: '/partner-doosan-jaya-sukabumi.png' },
+              { name: 'PT Young Hyun Star', logo: '/partner-young-hyun-star.png' },
+              { name: 'PT Busana Indah Global', logo: '/partner-busana-indah-global.png' },
+              { name: 'PT Sengsil Indonesia', logo: '/partner-sengsil-indonesia.png' },
+              { name: 'PT Doosan Dunia Busana', logo: '/partner-doosan-dunia-busana.png' },
             ].map((partner, index) => (
               <motion.div
                 key={index}
