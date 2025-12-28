@@ -3,6 +3,7 @@ import { AuroraBackground } from "@/components/ui/aurora-background";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+import { Logos3 } from "@/components/ui/logos3";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, FileText, Printer, FileSpreadsheet, Flag, CreditCard, Mail, Wallet, MessageCircle, Zap, Clock } from "lucide-react";
@@ -182,47 +183,18 @@ export default function Home() {
       </section>
 
       {/* Partners Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container px-4 md:px-6">
-          <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{t('home.partners_title')}</h2>
-            <p className="text-muted-foreground text-lg">
-              {t('home.partners_subtitle')}
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
-            {[
-              { name: 'PT Doosan Jaya Sukabumi', logo: '/partner-doosan-jaya-sukabumi.png' },
-              { name: 'PT Young Hyun Star', logo: '/partner-young-hyun-star.png' },
-              { name: 'PT Busana Indah Global', logo: '/partner-busana-indah-global.png' },
-              { name: 'PT Sengsil Indonesia', logo: '/partner-sengsil-indonesia.png' },
-              { name: 'PT Doosan Dunia Busana', logo: '/partner-doosan-dunia-busana.png' },
-            ].map((partner, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex flex-col items-center gap-3 group"
-              >
-                <div className="w-full max-w-[180px] h-[120px] flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
-                  <img 
-                    src={partner.logo} 
-                    alt={partner.name}
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <p className="text-sm font-medium text-center text-muted-foreground group-hover:text-foreground transition-colors">
-                  {partner.name}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <div className="bg-muted/30">
+        <Logos3 
+          heading={t('home.partners_title')}
+          logos={[
+            { id: 'partner-1', description: 'PT Doosan Jaya Sukabumi', image: '/partner-doosan-jaya-sukabumi.png', className: 'h-16 w-auto object-contain' },
+            { id: 'partner-2', description: 'PT Young Hyun Star', image: '/partner-young-hyun-star.png', className: 'h-16 w-auto object-contain' },
+            { id: 'partner-3', description: 'PT Busana Indah Global', image: '/partner-busana-indah-global.png', className: 'h-16 w-auto object-contain' },
+            { id: 'partner-4', description: 'PT Sengsil Indonesia', image: '/partner-sengsil-indonesia.png', className: 'h-16 w-auto object-contain' },
+            { id: 'partner-5', description: 'PT Doosan Dunia Busana', image: '/partner-doosan-dunia-busana.png', className: 'h-16 w-auto object-contain' },
+          ]}
+        />
+      </div>
 
       {/* Why Us Section */}
       <section className="py-24 bg-transparent border-y border-border/50">
