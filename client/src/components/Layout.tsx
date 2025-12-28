@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Printer, Phone, MapPin, Mail } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "./ui/theme-toggle";
 import { LanguageToggle } from "./ui/language-toggle";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -10,6 +11,7 @@ import { AnimatedGradientBackground } from "./ui/animated-gradient-background";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [location] = useLocation();
   const { t } = useLanguage();
 
@@ -36,20 +38,75 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <div
-                  className={cn(
-                    "text-sm font-medium transition-colors hover:text-primary cursor-pointer",
-                    location === item.href
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  )}
-                >
-                  {item.label}
-                </div>
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = location === item.href;
+              const isHovered = hoveredItem === item.href;
+              
+              return (
+                <Link key={item.href} href={item.href}>
+                  <motion.div
+                    className={cn(
+                      "relative text-sm font-medium cursor-pointer px-3 py-2 rounded-md",
+                      isActive
+                        ? "text-primary"
+                        : "text-muted-foreground hover:text-primary"
+                    )}
+                    onMouseEnter={() => setHoveredItem(item.href)}
+                    onMouseLeave={() => setHoveredItem(null)}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {/* Glow effect for active item */}
+                    {isActive && (
+                      <motion.div
+                        className="absolute inset-0 rounded-md -z-10 overflow-hidden"
+                        initial={{ opacity: 0 }}
+                        animate={{ 
+                          opacity: [0.3, 0.5, 0.3],
+                          scale: [1, 1.03, 1]
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      >
+                        <div className="absolute inset-0 bg-primary/25 rounded-md blur-md" />
+                        <div className="absolute inset-[-4px] bg-primary/20 rounded-md blur-xl" />
+                        <div className="absolute inset-[-8px] bg-primary/15 rounded-md blur-2xl" />
+                        
+                        {/* Shine effect */}
+                        <motion.div 
+                          className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0"
+                          animate={{
+                            x: ["-100%", "100%"]
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        />
+                      </motion.div>
+                    )}
+                    
+                    {/* Hover effect */}
+                    <AnimatePresence>
+                      {isHovered && !isActive && (
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.8 }}
+                          className="absolute inset-0 bg-primary/10 rounded-md -z-10"
+                        />
+                      )}
+                    </AnimatePresence>
+                    
+                    <span className="relative z-10">{item.label}</span>
+                  </motion.div>
+                </Link>
+              );
+            })}
             
             <div className="flex items-center gap-2 ml-2 border-l pl-4">
               <LanguageToggle />
