@@ -29,14 +29,14 @@ const Logos3 = ({
   const duplicatedLogos = [...logos, ...logos];
   
   return (
-    <section className="py-24">
+    <section className="py-24 overflow-hidden">
       <div className="container flex flex-col items-center text-center">
         <h2 className="my-6 text-2xl font-bold text-pretty lg:text-4xl">
           {heading}
         </h2>
       </div>
-      <div className="pt-10 md:pt-16 lg:pt-20">
-        <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
+      <div className="pt-10 md:pt-16 lg:pt-20 overflow-hidden">
+        <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl overflow-hidden">
           <Carousel
             opts={{ loop: true, align: "start" }}
             plugins={[

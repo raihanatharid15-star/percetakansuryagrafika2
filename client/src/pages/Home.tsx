@@ -183,7 +183,7 @@ export default function Home() {
       </section>
 
       {/* Partners Section */}
-      <div className="bg-muted/30">
+      <div>
         <Logos3 
           heading={t('home.partners_title')}
           logos={[
