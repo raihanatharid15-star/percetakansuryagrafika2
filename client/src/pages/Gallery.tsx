@@ -48,43 +48,43 @@ export default function Gallery() {
     setLoading(false);
   }
 
-  // Fallback data if database is empty
+  // Sample products data
   const fallbackItems = [
     {
       id: "1",
-      title: "Undangan Rustic",
-      image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800",
-      category: "Undangan"
+      title: "Cetak Form",
+      image: "/cetak-form.png",
+      category: "Kebutuhan skala besar untuk kebutuhan produksi, catatan office, dll"
     },
     {
       id: "2",
-      title: "Kartu Nama Elegan",
-      image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=800",
-      category: "Stationery"
+      title: "Cetak A3",
+      image: "/cetak-a3.png",
+      category: "Cetak dokumen ukuran besar"
     },
     {
       id: "3",
-      title: "Brosur Lipat Tiga",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
-      category: "Marketing"
+      title: "Surat Jalan / Nota",
+      image: "/surat-jalan-nota.png",
+      category: "Dokumen pengiriman dan transaksi"
     },
     {
       id: "4",
-      title: "X-Banner Event",
-      image: "https://images.unsplash.com/photo-1562564055-71e051d33c19?auto=format&fit=crop&q=80&w=800",
-      category: "Large Format"
+      title: "Spanduk",
+      image: "/spanduk.png",
+      category: "Media promosi outdoor"
     },
     {
       id: "5",
-      title: "Packaging Box",
-      image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=800",
-      category: "Packaging"
+      title: "Kartu Nama",
+      image: "/kartu-nama.png",
+      category: "Identitas profesional bisnis"
     },
     {
       id: "6",
-      title: "Stiker Label",
-      image: "https://images.unsplash.com/photo-1616628188859-7a11abb6fcc9?auto=format&fit=crop&q=80&w=800",
-      category: "Stiker"
+      title: "Undangan",
+      image: "/undangan.png",
+      category: "Undangan pernikahan dan acara"
     }
   ];
 
