@@ -4,6 +4,7 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-w
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import { Logos3 } from "@/components/ui/logos3";
+import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, FileText, Printer, FileSpreadsheet, Flag, CreditCard, Mail, Wallet, MessageCircle, Zap, Clock } from "lucide-react";
@@ -263,6 +264,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Floating WhatsApp Button */}
+      <FloatingWhatsApp 
+        phoneNumber="6281220676690"
+        message="Halo, saya ingin bertanya tentang produk percetakan lainnya"
+        buttonText="Hubungi kami untuk produk lainnya"
+      />
     </div>
   );
 }

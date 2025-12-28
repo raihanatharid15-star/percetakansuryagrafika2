@@ -1,47 +1,12 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { FlowButton } from "@/components/ui/flow-button";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const formSchema = z.object({
-  name: z.string().min(2, "Nama minimal 2 karakter"),
-  message: z.string().min(10, "Pesan minimal 10 karakter"),
-});
-
 export default function Contact() {
   const { t } = useLanguage();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      message: "",
-    },
-  });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true);
-    
-    // Format pesan WhatsApp
-    const text = `Halo Surya Grafika, saya ${values.name}. ${values.message}`;
-    const encodedText = encodeURIComponent(text);
-    const waUrl = `https://wa.me/6285860765740?text=${encodedText}`;
-    
-    // Redirect ke WhatsApp
-    window.open(waUrl, '_blank');
-    setIsSubmitting(false);
-  }
 
   return (
     <div className="container py-16 md:py-24">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="max-w-4xl mx-auto">
         {/* Contact Info */}
         <div className="space-y-8">
           <div>
@@ -94,53 +59,6 @@ export default function Contact() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Contact Form */}
-        <div className="bg-card p-8 rounded-3xl border shadow-sm">
-          <h2 className="text-2xl font-bold mb-6">{t('contact.form_title')}</h2>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('contact.name_label')}</FormLabel>
-                    <FormControl>
-                      <Input placeholder={t('contact.name_placeholder')} {...field} className="h-12 rounded-xl" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('contact.message_label')}</FormLabel>
-                    <FormControl>
-                      <Textarea 
-                        placeholder={t('contact.message_placeholder')}
-                        className="min-h-[150px] rounded-xl resize-none"
-                        {...field} 
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              
-              <FlowButton 
-                type="submit" 
-                disabled={isSubmitting}
-                text={t('contact.send_wa')}
-                className="w-full justify-center"
-              />
-            </form>
-          </Form>
         </div>
       </div>
     </div>
