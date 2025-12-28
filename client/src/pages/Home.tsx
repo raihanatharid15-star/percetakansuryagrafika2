@@ -1,5 +1,6 @@
 import { FlowButton } from "@/components/ui/flow-button";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -77,7 +78,8 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Aurora Background */}
-      <AuroraBackground className="h-[90vh]">
+      <BackgroundBeamsWithCollision className="h-[90vh]">
+      <AuroraBackground className="h-[90vh] bg-transparent">
         <div className="relative flex flex-col gap-8 items-center justify-center px-4 text-center max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -128,6 +130,7 @@ export default function Home() {
           </motion.div>
         </div>
       </AuroraBackground>
+      </BackgroundBeamsWithCollision>
 
       {/* Services Section */}
       <section className="py-24 bg-transparent relative overflow-hidden">
