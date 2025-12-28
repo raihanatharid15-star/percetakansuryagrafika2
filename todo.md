@@ -1,0 +1,41 @@
+- [ ] Push logo and background updates to GitHub
+- [ ] Align logo with text in navbar (Layout.tsx)
+- [ ] Process new logo image (remove background if needed, resize)
+- [ ] Update client/public/logo.webp with new image
+- [ ] Update favicon (client/public/vite.svg or similar) with new image
+- [ ] Process new transparent logo image (convert to WebP/ICO)
+- [ ] Update client/public/logo.webp with transparent image
+- [ ] Update client/public/favicon.ico with transparent image
+- [ ] Update favicon with the JPEG image (WhatsAppImage2025-12-27at09.16.09.jpeg)
+- [ ] Update Hero subtitle text in translations.ts
+- [ ] Update Services list (6 items) in Home.tsx and translations.ts
+- [ ] Update Why Choose Us points (4 items) in Home.tsx and translations.ts
+- [ ] Process About Us image (convert to WebP) and save to client/public/about.webp
+- [ ] Create client/src/pages/About.tsx with provided text and image layout
+- [ ] Add translations for About Us page in translations.ts
+- [ ] Add About Us route in App.tsx
+- [ ] Add About Us link to Navbar in Layout.tsx
+- [ ] Update client/src/index.css to use Blue as primary color (HSL 221 83% 53% or similar)
+- [ ] Update AnimatedGradientBackground to use blue-ish gradients
+- [ ] Enhance Hero section in Home.tsx with better animations (staggered fade-in, text reveal)
+- [ ] Update client/src/components/ui/aurora-background.tsx to use blue colors explicitly
+- [ ] Update client/src/components/ui/animated-gradient-background.tsx to use blue gradients
+- [ ] Clean up client/src/index.css to remove any remaining conflicting color variables
+- [ ] Update client/src/index.css to set body background to light blue (#eff6ff)
+- [ ] Update AnimatedGradientBackground to use stronger opacities (0.6-0.8)
+- [ ] Update AuroraBackground to use darker blue gradients for contrast
+- [ ] Update client/src/lib/translations.ts to change "Workshop Location" to "Location"
+- [ ] Update client/src/lib/translations.ts to change email to Suryagrafikagroup@gmail.com
+- [ ] Update client/src/components/Layout.tsx to change email to Suryagrafikagroup@gmail.com
+- [ ] Read pasted_content_5.txt to understand border requirements
+- [ ] Update client/src/index.css to apply custom border styles for light and dark modes
+- [ ] Install motion package
+- [ ] Create client/src/components/ui/glowing-effect.tsx
+- [ ] Update Home.tsx to use GlowingEffect for Service and Feature cards
+- [ ] Revert "Why Choose Us" section in Home.tsx to original design (remove GlowingEffect)
+- [ ] Update About.tsx text color to darker shade (e.g., text-gray-800 or text-foreground)
+- [ ] Read pasted_content_6.txt to understand text animation requirements
+- [ ] Create client/src/components/ui/text-animate.tsx
+- [ ] Update Home.tsx to use TextAnimate for Hero section text
+- [ ] Create client/src/components/ui/hero-highlight.tsx
+- [ ] Update Home.tsx to use HeroHighlight for Hero section text
