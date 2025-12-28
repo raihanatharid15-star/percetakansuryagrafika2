@@ -79,7 +79,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Aurora Background */}
       <BackgroundBeamsWithCollision className="h-[90vh]">
-      <AuroraBackground className="h-[90vh] bg-transparent">
+      <AuroraBackground className="h-[90vh]">
         <div className="relative flex flex-col gap-8 items-center justify-center px-4 text-center max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
