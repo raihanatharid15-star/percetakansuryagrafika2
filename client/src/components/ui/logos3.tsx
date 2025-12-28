@@ -25,6 +25,9 @@ const Logos3 = ({
   heading = "Trusted by these companies",
   logos = [],
 }: Logos3Props) => {
+  // Duplicate logos for smooth infinite scroll
+  const duplicatedLogos = [...logos, ...logos];
+  
   return (
     <section className="py-24">
       <div className="container flex flex-col items-center text-center">
@@ -35,13 +38,20 @@ const Logos3 = ({
       <div className="pt-10 md:pt-16 lg:pt-20">
         <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
           <Carousel
-            opts={{ loop: true }}
-            plugins={[AutoScroll({ playOnInit: true, speed: 1 })]}
+            opts={{ loop: true, align: "start" }}
+            plugins={[
+              AutoScroll({ 
+                playOnInit: true, 
+                speed: 0.5,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+              })
+            ]}
           >
             <CarouselContent className="ml-0">
-              {logos.map((logo) => (
+              {duplicatedLogos.map((logo, index) => (
                 <CarouselItem
-                  key={logo.id}
+                  key={`${logo.id}-${index}`}
                   className="flex basis-1/2 justify-center pl-0 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
                 >
                   <div className="mx-10 flex shrink-0 items-center justify-center">
@@ -58,8 +68,8 @@ const Logos3 = ({
               ))}
             </CarouselContent>
           </Carousel>
-          <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-background to-transparent pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-background to-transparent pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent pointer-events-none z-10"></div>
+          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent pointer-events-none z-10"></div>
         </div>
       </div>
     </section>
