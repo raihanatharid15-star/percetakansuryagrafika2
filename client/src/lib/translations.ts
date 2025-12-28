@@ -37,6 +37,8 @@ export const translations = {
       why_urgent_desc: "Siap membantu kebutuhan cetak mendadak Anda.",
       why_speed: "Pengerjaan Cepat",
       why_speed_desc: "Proses produksi efisien dan tepat waktu.",
+      partners_title: "Partner Kami",
+      partners_subtitle: "Dipercaya oleh perusahaan-perusahaan terkemuka di Indonesia",
     },
     gallery: {
       title: "Galeri Hasil Cetak",
@@ -122,6 +124,8 @@ export const translations = {
       why_urgent_desc: "Ready to help with your rush printing needs.",
       why_speed: "Fast Turnaround",
       why_speed_desc: "Efficient and timely production process.",
+      partners_title: "Our Partners",
+      partners_subtitle: "Trusted by leading companies in Indonesia",
     },
     gallery: {
       title: "Print Gallery",

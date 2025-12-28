@@ -178,6 +178,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Partners Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container px-4 md:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{t('home.partners_title')}</h2>
+            <p className="text-muted-foreground text-lg">
+              {t('home.partners_subtitle')}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+            {[
+              { name: 'PT Doosan Jaya Sukabumi', logo: '/partner-doosan-jaya-sukabumi.jpg' },
+              { name: 'PT Young Hyun Star', logo: '/partner-young-hyun-star.jpg' },
+              { name: 'PT Busana Indah Global', logo: '/partner-busana-indah-global.jpg' },
+              { name: 'PT Sengsil Indonesia', logo: '/partner-sengsil-indonesia.jpg' },
+              { name: 'PT Doosan Dunia Busana', logo: '/partner-doosan-dunia-busana.jpg' },
+            ].map((partner, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="w-full max-w-[180px] h-[120px] flex items-center justify-center p-4 rounded-xl bg-background border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg group"
+              >
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name}
+                  className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Us Section */}
       <section className="py-24 bg-transparent border-y border-border/50">
         <div className="container px-4 md:px-6">
