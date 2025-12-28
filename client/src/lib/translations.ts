@@ -65,7 +65,7 @@ export const translations = {
     },
     location: {
       title: "Lokasi",
-      subtitle: "Kunjungi workshop kami untuk konsultasi langsung atau melihat sampel bahan cetakan.",
+      subtitle: "Kunjungi tempat kami untuk konsultasi langsung atau melihat sampel bahan cetakan.",
       address_title: "Alamat Lengkap",
       open_maps: "Buka di Google Maps",
       live_status: "Buka",
@@ -152,7 +152,7 @@ export const translations = {
     },
     location: {
       title: "Location",
-      subtitle: "Visit our workshop for direct consultation or to see print material samples.",
+      subtitle: "Visit our place for direct consultation or to see print material samples.",
       address_title: "Full Address",
       open_maps: "Open in Google Maps",
       live_status: "Open",
