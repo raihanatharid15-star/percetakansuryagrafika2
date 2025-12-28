@@ -184,10 +184,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h3 className="font-semibold mb-4">{t('home.services_title')}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>{t('home.service_invitation')}</li>
-                <li>{t('home.service_business')}</li>
+                <li>{t('home.service_form')}</li>
+                <li>{t('home.service_a3')}</li>
+                <li>{t('home.service_nota')}</li>
                 <li>{t('home.service_banner')}</li>
-                <li>{t('home.service_sticker')}</li>
+                <li>{t('home.service_card')}</li>
+                <li>{t('home.service_invitation')}</li>
               </ul>
             </div>
 
