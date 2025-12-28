@@ -198,18 +198,23 @@ export default function Home() {
             ].map((partner, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="w-full max-w-[180px] h-[120px] flex items-center justify-center p-4 rounded-xl bg-background border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg group"
+                className="flex flex-col items-center gap-3 group"
               >
-                <img 
-                  src={partner.logo} 
-                  alt={partner.name}
-                  className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
-                  loading="lazy"
-                />
+                <div className="w-full max-w-[180px] h-[120px] flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <p className="text-sm font-medium text-center text-muted-foreground group-hover:text-foreground transition-colors">
+                  {partner.name}
+                </p>
               </motion.div>
             ))}
           </div>
