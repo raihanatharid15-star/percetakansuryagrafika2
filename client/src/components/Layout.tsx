@@ -32,12 +32,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link href="/">
             <div className="flex items-center gap-2 font-bold text-xl text-primary cursor-pointer">
               <img src="/logo.webp" alt="Surya Grafika Logo" className="h-8 w-auto object-contain" />
-              <span className="hidden sm:inline-block">Surya Grafika</span>
+              <span className="hidden md:inline-block">Surya Grafika</span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-2">
             {navItems.map((item) => {
               const isActive = location === item.href;
               const isHovered = hoveredItem === item.href;
