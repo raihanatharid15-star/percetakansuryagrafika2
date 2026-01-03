@@ -58,12 +58,11 @@ export default function Location() {
                 <div className="space-y-1">
                   <h4 className="font-medium text-foreground">{t('contact.hours_label')}</h4>
                   <p className="text-sm text-muted-foreground">{t('contact.hours_value')}</p>
-                  <p className="text-sm text-muted-foreground">{t('contact.sunday_closed')}</p>
                 </div>
                 <div className="space-y-1">
                   <h4 className="font-medium text-foreground">{t('footer.contact')}</h4>
                   <p className="text-sm text-muted-foreground">WhatsApp: +62 858-6076-5740</p>
-                  <p className="text-sm text-muted-foreground">Email: info@suryagrafika.com</p>
+                  <p className="text-sm text-muted-foreground">Email: Suryagrafikagroup@gmail.com</p>
                 </div>
               </div>
 

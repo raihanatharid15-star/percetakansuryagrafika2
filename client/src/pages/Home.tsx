@@ -215,7 +215,7 @@ export default function Home() {
       {/* Partners Section */}
       <section className="py-20 bg-white">
         <div className="container px-4 md:px-6 mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <div className="text-center max-w-2xl mx-auto mb-8 space-y-4">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">{t('home.partners_title')}</h2>
             <p className="text-muted-foreground text-lg">
               {t('home.partners_subtitle')}
