@@ -221,7 +221,38 @@ export default function Home() {
               {t('home.partners_subtitle')}
             </p>
           </div>
-          <Logos3 />
+          <Logos3 logos={[
+            {
+              id: "doosan-jaya-sukabumi",
+              description: "PT Doosan Jaya Sukabumi",
+              image: "/partner-doosan-jaya-sukabumi.png",
+              className: "h-20 w-auto object-contain"
+            },
+            {
+              id: "young-hyun-star",
+              description: "PT Young Hyun Star",
+              image: "/partner-young-hyun-star.png",
+              className: "h-20 w-auto object-contain"
+            },
+            {
+              id: "busana-indah-global",
+              description: "PT Busana Indah Global",
+              image: "/partner-busana-indah-global.png",
+              className: "h-20 w-auto object-contain"
+            },
+            {
+              id: "sengsil-indonesia",
+              description: "PT Sengsil Indonesia",
+              image: "/partner-sengsil-indonesia.png",
+              className: "h-20 w-auto object-contain"
+            },
+            {
+              id: "doosan-dunia-busana",
+              description: "PT Doosan Dunia Busana",
+              image: "/partner-doosan-dunia-busana.png",
+              className: "h-20 w-auto object-contain"
+            }
+          ]} />
         </div>
       </section>
 
