@@ -1,11 +1,13 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 export default function About() {
   const { t } = useLanguage();
 
   return (
-    <div className="container py-16 md:py-24">
+    <AuroraBackground className="h-auto min-h-screen py-16 md:py-24">
+      <div className="container">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         {/* Image Section */}
         <motion.div
@@ -56,6 +58,7 @@ export default function About() {
           </div>
         </motion.div>
       </div>
-    </div>
+      </div>
+    </AuroraBackground>
   );
 }

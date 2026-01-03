@@ -3,6 +3,7 @@ import { supabase } from "@/lib/supabase";
 import { Loader2, ZoomIn } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 type GalleryItem = {
   id: string;
@@ -91,7 +92,8 @@ export default function Gallery() {
   const displayItems = items.length > 0 ? items : fallbackItems;
 
   return (
-    <div className="container py-16 space-y-12">
+    <AuroraBackground className="h-auto min-h-screen py-16">
+      <div className="container space-y-12">
       <div className="text-center max-w-2xl mx-auto space-y-4">
         <h1 className="text-4xl font-bold tracking-tight">{t('gallery.title')}</h1>
         <p className="text-lg text-muted-foreground">
@@ -135,6 +137,7 @@ export default function Gallery() {
           ))}
         </div>
       )}
-    </div>
+      </div>
+    </AuroraBackground>
   );
 }

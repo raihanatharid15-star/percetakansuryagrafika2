@@ -1,11 +1,13 @@
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { AuroraBackground } from "@/components/ui/aurora-background";ntext";
 
 export default function Contact() {
   const { t } = useLanguage();
 
   return (
-    <div className="container py-16 md:py-24">
+    <AuroraBackground className="h-auto min-h-screen py-16 md:py-24">
+      <div className="container">
       <div className="max-w-4xl mx-auto">
         {/* Contact Info */}
         <div className="space-y-8">
@@ -61,6 +63,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </AuroraBackground>
   );
 }

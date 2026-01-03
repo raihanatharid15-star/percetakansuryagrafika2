@@ -135,7 +135,7 @@ export default function Home() {
       </BackgroundBeamsWithCollision>
 
       {/* Services Section */}
-      <section className="py-24 bg-transparent relative overflow-hidden">
+      <AuroraBackground className="py-24 h-auto min-h-screen">
         <div className="container px-4 md:px-6 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{t('home.services_title')}</h2>
@@ -181,7 +181,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </AuroraBackground>
 
       {/* Partners Section */}
       <div>
