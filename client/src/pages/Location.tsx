@@ -62,7 +62,7 @@ export default function Location() {
                 <div className="space-y-1">
                   <h4 className="font-medium text-foreground">{t('footer.contact')}</h4>
                   <p className="text-sm text-muted-foreground">WhatsApp: +62 858-6076-5740</p>
-                  <p className="text-sm text-muted-foreground">Email: Suryagrafikagroup@gmail.com</p>
+                  <p className="text-sm text-muted-foreground">Email: suryagrafikagroup@gmail.com</p>
                 </div>
               </div>
 

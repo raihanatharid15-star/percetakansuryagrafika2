@@ -204,7 +204,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </li>
                 <li className="flex items-center gap-2">
                   <Mail className="h-4 w-4 shrink-0" />
-                  <span>Suryagrafikagroup@gmail.com</span>
+                  <span>suryagrafikagroup@gmail.com</span>
                 </li>
               </ul>
             </div>

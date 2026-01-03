@@ -29,13 +29,13 @@ export default function Contact() {
               </div>
             </a>
 
-            <a href="mailto:Suryagrafikagroup@gmail.com" className="flex items-start gap-4 p-6 rounded-2xl bg-muted/30 border border-border/50 hover:bg-muted/50 transition-colors cursor-pointer">
+            <a href="mailto:suryagrafikagroup@gmail.com" className="flex items-start gap-4 p-6 rounded-2xl bg-muted/30 border border-border/50 hover:bg-muted/50 transition-colors cursor-pointer">
               <div className="p-3 rounded-xl bg-blue-100 text-blue-600">
                 <Mail className="h-6 w-6" />
               </div>
               <div>
                 <h3 className="font-semibold mb-1">{t('contact.email_label')}</h3>
-                <p className="text-muted-foreground">Suryagrafikagroup@gmail.com</p>
+                <p className="text-muted-foreground">suryagrafikagroup@gmail.com</p>
               </div>
             </a>
 
