@@ -23,36 +23,36 @@ export default function Home() {
       icon: Printer,
       title: t('home.service_a3'),
       desc: t('home.service_a3_desc'),
-      color: "text-primary",
-      bg: "bg-white",
+      color: "text-white",
+      bg: "bg-primary",
     },
     {
       icon: FileSpreadsheet,
       title: t('home.service_nota'),
       desc: t('home.service_nota_desc'),
-      color: "text-primary",
-      bg: "bg-white",
+      color: "text-white",
+      bg: "bg-primary",
     },
     {
       icon: Flag,
       title: t('home.service_banner'),
       desc: t('home.service_banner_desc'),
-      color: "text-primary",
-      bg: "bg-white",
+      color: "text-white",
+      bg: "bg-primary",
     },
     {
       icon: CreditCard,
       title: t('home.service_card'),
       desc: t('home.service_card_desc'),
-      color: "text-primary",
-      bg: "bg-white",
+      color: "text-white",
+      bg: "bg-primary",
     },
     {
       icon: Mail,
       title: t('home.service_invitation'),
       desc: t('home.service_invitation_desc'),
-      color: "text-primary",
-      bg: "bg-white",
+      color: "text-white",
+      bg: "bg-primary",
     },
   ];
 
@@ -186,9 +186,6 @@ export default function Home() {
         <div className="container px-4 md:px-6 mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight">{t('home.why_title')}</h2>
-            <p className="text-white/80 text-lg">
-              {t('home.why_subtitle')}
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
@@ -228,31 +225,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary/80">
-        <div className="container px-4 md:px-6 mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto space-y-8"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold text-white">
-              {t('home.cta_title')}
-            </h2>
-            <p className="text-xl text-white/90">
-              {t('home.cta_subtitle')}
-            </p>
-            <Link href="/contact">
-              <button className="px-10 py-5 rounded-lg bg-white text-primary hover:bg-white/90 transition-all font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 inline-flex items-center gap-2">
-                {t('home.cta_button')}
-                <ArrowRight className="w-5 h-5" />
-              </button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
 
       <FloatingWhatsApp />
     </div>
