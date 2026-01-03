@@ -31,13 +31,19 @@ export function ThemeProvider({
 
   useEffect(() => {
     const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
+    
+    // Force light mode - always remove dark class
+    root.classList.remove("dark");
+    
+    // Clear any stored dark theme
+    if (!switchable) {
+      localStorage.removeItem("theme");
     }
-
+    
     if (switchable) {
+      if (theme === "dark") {
+        root.classList.add("dark");
+      }
       localStorage.setItem("theme", theme);
     }
   }, [theme, switchable]);
