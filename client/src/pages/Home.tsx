@@ -178,6 +178,25 @@ export default function Home() {
               );
             })}
           </div>
+
+          {/* WhatsApp CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <a 
+              href="https://wa.me/6285860765740?text=Halo!%20saya%20ingin%20informasi%20lebih%20lanjut%20terkait%20produk%20percetakan%20anda!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-lg bg-green-600 text-white hover:bg-green-700 transition-all font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              <MessageCircle className="w-6 h-6" />
+              Hubungi Kami untuk Produk Lainnya
+            </a>
+          </motion.div>
         </div>
       </section>
 
