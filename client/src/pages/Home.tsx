@@ -276,7 +276,10 @@ export default function Home() {
       </section>
 
 
-      <FloatingWhatsApp />
+      <FloatingWhatsApp 
+        phoneNumber="6285860765740"
+        message="Halo! saya ingin informasi lebih lanjut terkait produk percetakan anda!"
+      />
     </div>
   );
 }
