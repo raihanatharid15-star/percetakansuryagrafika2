@@ -1,20 +1,15 @@
 import { motion } from "framer-motion";
-import { MessageCircle, X } from "lucide-react";
-import { useState } from "react";
+import { MessageCircle } from "lucide-react";
 
 interface FloatingWhatsAppProps {
   phoneNumber: string;
   message?: string;
-  buttonText?: string;
 }
 
 export function FloatingWhatsApp({ 
   phoneNumber, 
-  message = "Halo, saya ingin bertanya tentang produk Anda",
-  buttonText = "Hubungi kami untuk produk lainnya"
+  message = "Halo! saya ingin informasi lebih lanjut terkait produk percetakan anda!"
 }: FloatingWhatsAppProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
   const handleWhatsAppClick = () => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -23,7 +18,7 @@ export function FloatingWhatsApp({
 
   return (
     <>
-      {/* Floating Button */}
+      {/* Floating Button - Icon Only */}
       <motion.div
         className="fixed bottom-6 right-6 z-50"
         initial={{ scale: 0, opacity: 0 }}
@@ -32,9 +27,10 @@ export function FloatingWhatsApp({
       >
         <motion.button
           onClick={handleWhatsAppClick}
-          className="flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-full shadow-lg transition-all"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full shadow-lg transition-all"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          aria-label="Chat WhatsApp"
         >
           <motion.div
             animate={{
@@ -46,16 +42,15 @@ export function FloatingWhatsApp({
               repeatDelay: 3,
             }}
           >
-            <MessageCircle className="h-6 w-6" />
+            <MessageCircle className="h-7 w-7" />
           </motion.div>
-          <span className="hidden md:inline font-medium">{buttonText}</span>
         </motion.button>
 
         {/* Pulse effect */}
         <motion.div
           className="absolute inset-0 bg-green-500 rounded-full -z-10"
           animate={{
-            scale: [1, 1.2, 1],
+            scale: [1, 1.3, 1],
             opacity: [0.5, 0, 0.5],
           }}
           transition={{
