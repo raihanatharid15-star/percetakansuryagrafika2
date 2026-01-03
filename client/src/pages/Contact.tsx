@@ -1,6 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { AuroraBackground } from "@/components/ui/aurora-background";ntext";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 export default function Contact() {
   const { t } = useLanguage();
