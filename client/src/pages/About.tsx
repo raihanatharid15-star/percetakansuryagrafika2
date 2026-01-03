@@ -16,7 +16,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="relative"
         >
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-purple-500/20 rounded-3xl blur-3xl -z-10" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-primary/10 rounded-3xl blur-3xl -z-10" />
           <div className="relative rounded-3xl overflow-hidden border border-border/50 shadow-xl">
             <img 
               src="/about.webp" 
@@ -37,7 +37,7 @@ export default function About() {
           className="space-y-6"
         >
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
               {t('about.title')}
             </h1>
             <p className="text-lg text-foreground/80 font-semibold">
