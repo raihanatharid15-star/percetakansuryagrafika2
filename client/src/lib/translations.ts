@@ -61,7 +61,7 @@ export const translations = {
       address_label: "Alamat",
       address_value: "4QGJ+26 Cisarua, Kabupaten Sukabumi, Jawa Barat",
       hours_label: "Jam Operasional",
-      hours_value: "Senin - Sabtu: 08.00 - 17.00",
+      hours_value: "Senin - Sabtu: 07.00 - 15.30",
     },
     location: {
       title: "Lokasi",
@@ -148,7 +148,7 @@ export const translations = {
       address_label: "Address",
       address_value: "4QGJ+26 Cisarua, Sukabumi Regency, West Java",
       hours_label: "Opening Hours",
-      hours_value: "Mon - Sat: 08.00 - 17.00",
+      hours_value: "Mon - Sat: 07.00 - 15.30",
     },
     location: {
       title: "Location",

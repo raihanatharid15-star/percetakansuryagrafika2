@@ -4,7 +4,7 @@ import { Menu, X, Printer, Phone, MapPin, Mail } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import { ThemeToggle } from "./ui/theme-toggle";
+
 import { LanguageToggle } from "./ui/language-toggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { AnimatedGradientBackground } from "./ui/animated-gradient-background";
@@ -110,7 +110,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             
             <div className="flex items-center gap-2 ml-2 border-l pl-4">
               <LanguageToggle />
-              <ThemeToggle />
             </div>
           </nav>
 
@@ -118,7 +117,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="md:hidden flex items-center gap-4">
             <div className="flex items-center gap-2">
               <LanguageToggle />
-              <ThemeToggle />
             </div>
             <button
               className="p-2"

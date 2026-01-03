@@ -19,28 +19,28 @@ export default function Contact() {
           </div>
 
           <div className="space-y-6">
-            <div className="flex items-start gap-4 p-6 rounded-2xl bg-muted/30 border border-border/50">
-              <div className="p-3 rounded-xl bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
+            <a href="https://wa.me/6285860765740" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 p-6 rounded-2xl bg-muted/30 border border-border/50 hover:bg-muted/50 transition-colors cursor-pointer">
+              <div className="p-3 rounded-xl bg-green-100 text-green-600">
                 <Phone className="h-6 w-6" />
               </div>
               <div>
                 <h3 className="font-semibold mb-1">{t('contact.wa_label')}</h3>
                 <p className="text-muted-foreground">+62 858-6076-5740</p>
               </div>
-            </div>
+            </a>
 
-            <div className="flex items-start gap-4 p-6 rounded-2xl bg-muted/30 border border-border/50">
-              <div className="p-3 rounded-xl bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+            <a href="mailto:Suryagrafikagroup@gmail.com" className="flex items-start gap-4 p-6 rounded-2xl bg-muted/30 border border-border/50 hover:bg-muted/50 transition-colors cursor-pointer">
+              <div className="p-3 rounded-xl bg-blue-100 text-blue-600">
                 <Mail className="h-6 w-6" />
               </div>
               <div>
                 <h3 className="font-semibold mb-1">{t('contact.email_label')}</h3>
                 <p className="text-muted-foreground">Suryagrafikagroup@gmail.com</p>
               </div>
-            </div>
+            </a>
 
             <div className="flex items-start gap-4 p-6 rounded-2xl bg-muted/30 border border-border/50">
-              <div className="p-3 rounded-xl bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400">
+              <div className="p-3 rounded-xl bg-orange-100 text-orange-600">
                 <MapPin className="h-6 w-6" />
               </div>
               <div>
@@ -52,7 +52,7 @@ export default function Contact() {
             </div>
 
             <div className="flex items-start gap-4 p-6 rounded-2xl bg-muted/30 border border-border/50">
-              <div className="p-3 rounded-xl bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+              <div className="p-3 rounded-xl bg-purple-100 text-purple-600">
                 <Clock className="h-6 w-6" />
               </div>
               <div>
